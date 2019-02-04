@@ -1,0 +1,25 @@
+{
+	"query": { 
+		"bool" : {
+			"must": [
+				{"match" : {"cuisine": "pizza"} },
+				{"match" : {"borough": "manhattan"} }
+				]
+		}
+	},
+	"aggs" : {
+		"moyenne_restaurant" : {
+			"terms" : {
+				"field" : "name.raw",
+	            "order" : {"note_moyenne" : "desc" },
+	            "size" : 1
+			},
+			"aggs" : {
+				"note_moyenne" : {
+					"avg" : {"field" : "grades.score"}
+				}
+			}	
+		}
+	},
+	"size" : 0
+}
