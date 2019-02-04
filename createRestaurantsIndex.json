@@ -1,0 +1,26 @@
+{
+	"mappings" : {
+		"_doc" : {
+			"properties" : {
+				"address.coord" : {
+					"type" : "geo_point"
+				},
+				"name" :{
+					"type" : "text",
+					"fields" : { "raw" : {"type" : "keyword"} },
+					"fielddata" : true
+				},
+				"cuisine" :{
+					"type" : "text",
+					"fields" : { "raw" : {"type" : "keyword"} },
+					"fielddata" : true
+				},
+				"borough" :{
+					"type" : "text",
+					"fields" : { "raw" : {"type" : "keyword"} },
+					"fielddata" : true
+				}
+			}
+		}
+	}
+}
