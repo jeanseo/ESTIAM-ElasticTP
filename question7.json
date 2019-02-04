@@ -1,0 +1,13 @@
+{
+	"query": { 
+				"match" : {"borough": "brooklyn"}
+			},
+	"aggs" : {
+		"restos_bucket" : {
+			"terms" : {
+				"field" : "cuisine"
+			}
+		}
+	},
+	"size" : 0
+}
