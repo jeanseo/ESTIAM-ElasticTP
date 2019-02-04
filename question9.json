@@ -1,0 +1,31 @@
+{
+	"query": { 
+		"bool" : {
+			"must": [
+				{"match" : {"borough": "manhattan"} }
+				]
+		}
+	},
+	"aggs" : {
+		"cuisine_bucket" : {
+			"terms" : {
+				"field" : "cuisine"
+			},
+			"aggs" : {
+				"moyenne_restaurant" : {
+					"terms" : {
+						"field" : "name.raw",
+			            "order" : {"note_moyenne" : "desc" },
+			            "size" : 1
+					},
+				"aggs" : {
+					"note_moyenne" : {
+						"avg" : {"field" : "grades.score"}
+					}
+				}	
+		}
+			}
+		}
+	},
+	"size" : 0
+}
