@@ -1,0 +1,10 @@
+{
+	"aggs" : {
+		"restos_bucket" : {
+			"terms" : {
+				"field" : "borough.raw"
+			}
+		}
+	},
+	"size" : 0
+}
