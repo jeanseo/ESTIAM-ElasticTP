@@ -6,7 +6,7 @@
 				],
 			"filter" : {
 				"geo_distance" : {
-					"distance" : "500m",
+					"distance" : "1km",
 					"address.coord" : {
 						"lat" : 40.736574,
 						"lon" :  -73.990781
